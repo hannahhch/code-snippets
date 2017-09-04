@@ -11,23 +11,21 @@ const flash = require('express-flash-messages');
 const expressValidator = require('express-validator');
 const User = models.User;
 const LocalStrategy = require('passport-local').Strategy;
+mongoose.Promise = require('bluebird');
 
 const app = express();
 
-//find out which DB you are using
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost:27017/test');
 
-app.engine('mustache', mustacheExpress());
+app.engine('mustache', mustache());
 app.set('view engine', 'mustache');
 app.set('views', './views');
 
-app.use(express.static(__dirname + './public'));
+app.use('/static', express.static('static'));
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(session({
-  secret: "password",
-  resave: false,
-  saveUninitialized: true
-}));
+module.exports = app();
+
+  app.listen(3000, function(){
+    console.log("Running")
+  });
