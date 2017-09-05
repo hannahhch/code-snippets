@@ -3,14 +3,14 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
-const models = require('./models');
+const models = require('./models/users'); //maybe this is the problem
 const passport = require('passport');
 const express = require('express');
 const session = require('express-session');
 const flash = require('express-flash-messages');
 const expressValidator = require('express-validator');
-const Code = require('./models');
 const User = models.User;
+const Code = require('./models/snippets');
 const LocalStrategy = require('passport-local').Strategy;
 mongoose.Promise = require('bluebird');
 

@@ -46,17 +46,8 @@ const User = mongoose.model('User', userSchema);
 
 //Schema for snippets
 
-const codeSchema = new mongoose.Schema({
-  title: { type: String, required: true },
-  codeBody: String,
-  notes: String,
-  language: String,
-  tags: String
-})
 
-const Code = mongoose.model("Code", codeSchema);
 
 module.exports = {
     User: User,
-    Code: Code
 };
