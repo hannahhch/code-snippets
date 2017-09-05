@@ -48,7 +48,7 @@ const User = mongoose.model('User', userSchema);
 
 const codeSchema = new mongoose.Schema({
   title: { type: String, required: true },
-  body: String,
+  codeBody: String,
   notes: String,
   language: String,
   tags: String

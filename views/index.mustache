@@ -8,6 +8,7 @@
   <body>
     {{#user}}
     <h1>You are logged in as {{ username }}.</h1>
+    <p><a href = "/new/">Add a New Entry</a></p>
     <p><a href = "/logout/">Logout</a></p>
     {{/user}}
     {{^user}}
@@ -15,6 +16,11 @@
     <p><a href = "/login/">Login</a></p>
     <p><a href = "/register/">Register</a></p>
     {{/user}}
+    <div class = 'code-wrapper'>
+      {{#code}}
+      {{title}}
+      {{codeBody}}
+      {{/code}}
 
   </body>
 </html>

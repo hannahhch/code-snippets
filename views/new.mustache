@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>New</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <div class = 'wrapper'>
+      <h1>Add a New Entry</h1>
+      <form action="/new/" method="post">
+        <p>
+          <input type = "text" id = "title" name = "title" placeholder="Title"/>
+        </p>
+        <p>
+          <input type = "text" id = "codeBody" name = "codeBody" placeholder="Code"/>
+        </p>
+        <p>
+          <input type = "text" id = "notes" name = "notes" placeholder="Notes"/>
+        </p>
+        <p>
+          <input type = "text" id = "tags" name = "tags" placeholder="Tags"/>
+        </p>
+        <p>
+          <button type = "submit">Submit</button>
+        </p>
+      </form>
+    </div>
+  </body>
+</html>

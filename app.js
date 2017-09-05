@@ -9,6 +9,7 @@ const express = require('express');
 const session = require('express-session');
 const flash = require('express-flash-messages');
 const expressValidator = require('express-validator');
+const Code = require('./models');
 const User = models.User;
 const LocalStrategy = require('passport-local').Strategy;
 mongoose.Promise = require('bluebird');
@@ -148,9 +149,28 @@ const requireLogin = function (req, res, next){
   }
 }
 
+//pages past loging validation
+
 app.get('/home/', requireLogin, function (req,res){
-  res.render('home');
+  res.render('home', {code:code});
 })
+
+app.get('/new/', requireLogin, function(req,res){
+  res.render('new');
+})
+
+app.post('/new', function(req,res){
+  Code.create({
+    "title": req.body.name,
+    "codeBody": req.body.codeBody,
+    "notes": req.body.notes,
+    "language": req.body.language,
+    "tags": req.body.tags
+  })
+  .then(function(code){
+    res.redirect('/home/')
+  })
+});
 
 module.exports = app;
 
