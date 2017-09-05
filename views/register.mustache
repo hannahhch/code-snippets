@@ -7,6 +7,11 @@
   <body>
     <div class = 'wrapper'>
       <h1>Register</h1>
+      {{#messages.error}}
+      <div class="alert alert-danger" role="alert">
+        {{.}}
+      </div>
+      {{/messages.error}}
       <form method="post" action = '/register/'>
       <label for = "username-input">Username</label>
       <input type = 'text' id = 'username-input' name = 'username' value = "{{username}}"/>
