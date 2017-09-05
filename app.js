@@ -86,7 +86,7 @@ app.get('/login/', function(req, res){
 });
 
 app.post('/login/', passport.authenticate('local', {
-  successRedirect: '/',
+  successRedirect: '/secret/',
   failureRedirect: "/login/",
   failureFlash: true
 }))
@@ -154,8 +154,10 @@ const requireLogin = function (req, res, next){
 }
 
 app.get('/secret/', requireLogin, function (req, res) {
-  res.render("secret");
-})
+  Code.find({}).then(function(code){
+    res.render("secret", {code:code});
+  })
+});
 
 
 
