@@ -152,6 +152,8 @@ app.get('/home/', requireLogin, function (req,res){
   res.render('home');
 })
 
+module.exports = app;
+
 app.listen(3000, function(){
   console.log("Running")
 });
