@@ -13,10 +13,8 @@
       </div>
       {{/messages.error}}
       <form method="post" action = '/register/'>
-      <label for = "username-input">Username</label>
-      <input type = 'text' id = 'username-input' name = 'username' value = "{{username}}"/>
-      <label for = 'password-input'>Password</label>
-      <input type = 'password' id = 'password-input' name = 'password'/>
+      <input type = 'text' id = 'username-input' name = 'username' value = "{{username}}" placeholder="Username"/>
+      <input type = 'password' id = 'password-input' name = 'password' placeholder="Password"/>
       <button type = 'submit'>Register</button>
     </form>
   </div>
