@@ -6,15 +6,16 @@
     <link rel="stylesheet" href="/static/styles.css">
   </head>
   <body>
+    <div class = "nav">
     {{#user}}
-    <h1>You are logged in as {{ username }}.</h1>
-    <p><a href = "/logout/">Logout</a></p>
+    <div><p>You are logged in as {{ username }}.</p></div>
+    <div><p><a href = "/logout/">Logout</a></p></div>
     {{/user}}
     {{^user}}
-    <h1>You are not logged in.</h1>
-    <p><a href = "/login/">Login</a></p>
-    <p><a href = "/register/">Register</a></p>
-    <div class = 'code-wrapper'>
+      <div><p><a href = "/login/">Login</a></div>
+      <div><p><a href = "/register/">Register</a></p></div>
+
       {{/user}}
+    </div>
   </body>
 </html>

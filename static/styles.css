@@ -1,0 +1,15 @@
+body{
+  margin: 0;
+}
+
+.nav{
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 4em;
+  background-color: black;
+}
+
+.nav p, a{
+  padding: 5px;
+  color: white;
+}

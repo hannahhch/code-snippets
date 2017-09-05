@@ -10,7 +10,6 @@ const session = require('express-session');
 const flash = require('express-flash-messages');
 const expressValidator = require('express-validator');
 const User = models.User;
-const Code = require('./models/codes');
 const LocalStrategy = require('passport-local').Strategy;
 const mongoURL = 'mongodb://localhost:27017/test';
 mongoose.Promise = require('bluebird');
@@ -19,6 +18,7 @@ mongoose.Promise = require('bluebird');
 const app = express();
 
 mongoose.connect(mongoURL, {useMongoClient: true});
+const Code = require('./models/codes');
 
 app.engine('mustache', mustache());
 app.set('view engine', 'mustache');
@@ -154,8 +154,10 @@ const requireLogin = function (req, res, next){
 }
 
 app.get('/secret/', requireLogin, function (req, res) {
-  Code.find({}).then(function(code){
-    res.render("secret", {code:code});
+  console.log(Code);
+  Code.find().then(function(codes){
+    console.log(codes)
+    res.render("secret", {codes:codes})
   })
 });
 
