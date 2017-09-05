@@ -17,7 +17,7 @@
     "express-session": "^1.15.5",
     "express-sessions": "^1.0.6",
     "express-validator": "^4.1.1",
-    "mongodb": "^2.2.31",
+    "mongo": "^0.1.0",
     "mongoose": "^4.10.8",
     "mustache-express": "^1.2.5",
     "passport": "^0.4.0",

@@ -9,8 +9,6 @@ const codeSchema = new mongoose.Schema({
   tags: String
 })
 
-const Code = mongoose.model("Code", codeSchema);
+const Code = mongoose.model('Code', codeSchema);
 
-module.exports = {
-    Code: Code,
-};
+module.exports = Code;

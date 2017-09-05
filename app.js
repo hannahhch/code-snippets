@@ -10,13 +10,15 @@ const session = require('express-session');
 const flash = require('express-flash-messages');
 const expressValidator = require('express-validator');
 const User = models.User;
-const Code = require('./models/snippets');
+const Code = require('./models/codes');
 const LocalStrategy = require('passport-local').Strategy;
+const mongoURL = 'mongodb://localhost:27017/test';
 mongoose.Promise = require('bluebird');
+
 
 const app = express();
 
-mongoose.connect('mongodb://localhost:27017/test');
+mongoose.connect(mongoURL, {useMongoClient: true});
 
 app.engine('mustache', mustache());
 app.set('view engine', 'mustache');
@@ -72,8 +74,10 @@ app.use(function(req, res, next){
 })
 
 app.get('/', function(req,res){
-  res.render('index');
-})
+    res.render('index');
+});
+
+
 
 app.get('/login/', function(req, res){
   res.render('login',{
@@ -149,28 +153,11 @@ const requireLogin = function (req, res, next){
   }
 }
 
-//pages past loging validation
-
-app.get('/home/', requireLogin, function (req,res){
-  res.render('home', {code:code});
+app.get('/secret/', requireLogin, function (req, res) {
+  res.render("secret");
 })
 
-app.get('/new/', requireLogin, function(req,res){
-  res.render('new');
-})
 
-app.post('/new', function(req,res){
-  Code.create({
-    "title": req.body.name,
-    "codeBody": req.body.codeBody,
-    "notes": req.body.notes,
-    "language": req.body.language,
-    "tags": req.body.tags
-  })
-  .then(function(code){
-    res.redirect('/home/')
-  })
-});
 
 module.exports = app;
 
