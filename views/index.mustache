@@ -2,20 +2,25 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Welcome</title>
+    <title>Code Cat</title>
     <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text|Raleway" rel="stylesheet">
   </head>
   <body>
     <div class = "nav">
     {{#user}}
-    <div><p>You are logged in as {{ username }}.</p></div>
+    <div><p>You are logged in as: <em>{{ username }}</em></p></div>
     <div><p><a href = "/logout/">Logout</a></p></div>
     {{/user}}
+  </div>
+    <div class = "nav">
     {{^user}}
       <div><p><a href = "/login/">Login</a></div>
       <div><p><a href = "/register/">Register</a></p></div>
-
       {{/user}}
+    </div>
+    <div class = "main-header">
+      <h1>Code Cat</h1>
     </div>
   </body>
 </html>

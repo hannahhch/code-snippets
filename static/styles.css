@@ -1,15 +1,45 @@
 body{
   margin: 0;
+  background: #FB7F7F;
 }
 
 .nav{
   display: flex;
   justify-content: flex-end;
   padding-right: 4em;
-  background-color: black;
+  background-color: #1B1927;
 }
 
 .nav p, a{
   padding: 5px;
   color: white;
+  font-family: 'Raleway', sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav p{
+  padding: 5px;
+  color: #2ED7C2;
+  font-family: 'Raleway', sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav a:hover{
+  border-bottom: solid 1px white;
+}
+
+.main-header{
+  text-align: center;
+  height: 50vh;
+  text-transform: uppercase;
+}
+
+.main-header h1{
+  padding-top: 15vh;
+  color: white;
+  font-family: 'Libre Barcode 39 Text', cursive;
+  font-size: 10em;
+
 }
