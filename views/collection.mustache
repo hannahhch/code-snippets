@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Code Cat</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text|Raleway" rel="stylesheet">
+  </head>
+  <body>
+    <div class = 'nav'>
+      <div><p><a href = "/new">Create</a></div>
+      <div><p><a href = "/logout/">Logout</a></p></div>
+    </div>
+    <div class = "secret-header">
+      <h1>Code Cat Collection</h1>
+    </div>
+    {{#codes}}
+    <div class = "box">
+      <h2>{{title}}</h2>
+      <p>{{codeBody}}</p>
+      <p>{{notes}}</p>
+      <p>{{language}}</p>
+      <p>{{tags}}</p>
+    </div>
+    {{/codes}}
+  </body>
+</html>

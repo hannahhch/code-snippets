@@ -7,11 +7,14 @@ h1{
   font-family: 'Libre Barcode 39 Text', cursive;
 }
 
-h2{
+h2, h5{
   font-family: 'Raleway', sans-serif;
   text-transform: uppercase;
   color: black;
 }
+
+
+
 
 .nav{
   display: flex;
@@ -85,4 +88,20 @@ h2{
 #login-button:hover{
   cursor: pointer;
   color: #FB7F7F;
+}
+
+.secret-header h1{
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  font-size: 4.5em;
+  width: 61.7%;
+  margin: 5% 20%;
+}
+
+.box{
+  width: 60%;
+  margin: 2% 20%;
+  background-color: white;
+  padding: 15px 0 15px 25px;
 }
