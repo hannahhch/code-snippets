@@ -2,22 +2,26 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Login</title>
+    <title>Login | Code Cat</title>
     <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text|Raleway" rel="stylesheet">
   </head>
   <body>
-    <div class = 'wrapper'>
-      <h1>Login</h1>
+    <div class = 'nav'>
+      <div><p><a href = "/">Cancel</a></div>
+        <div><p><a href = "/register/">Register</a></p></div>
+    </div>
+    <div class = 'main-login-box'>
+      <h1>Code Cat</h1>
       {{#messages.error}}
           <div class="alert alert-danger" role="alert">
             {{.}}
           </div>
       {{/messages.error}}
-      <div class = 'body-wrapper'>
         <form method="post" action = '/login/'>
-          <input type = "text" id = 'username-input' name = "username" placeholder="Username"/>
-          <input type="password" id = 'password-input' name = "password" placeholder="Password"/>
-          <button type = "submit">Login</button>
+          <div><p><input type = "text" id = 'username-input' name = "username" placeholder="Username" autofocus/></p></div>
+          <div><p><input type="password" id = 'password-input' name = "password" placeholder="Password"/></p></div>
+          <p><button type = "submit" id = "login-button">Login</button></p>
         </form>
       </div>
     </div>
