@@ -2,13 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Code Cat</title>
     <link rel="stylesheet" href="/static/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text|Raleway" rel="stylesheet">
   </head>
   <body>
     <div class = 'nav'>
-      <div><p><a href = "/collection/">Home</a></div>
+      <div><p><a href = "/collection/">My Collection</a></div>
         <div><p><a href = "/logout/">Logout</a></p></div>
     </div>
     {{#codes}}
@@ -18,6 +18,9 @@
       {{notes}}
       {{language}}
       {{tags}}
+      <form action = '/{{_id}}/delete' method="post" class = 'form-buttons'>
+        <button type="submit">Delete</button>
+      </form>
       {{/codes}}
     </div>
   </body>

@@ -159,11 +159,36 @@ app.get('/collection/', requireLogin, function (req, res) {
   })
 });
 
+//when this chunk of code was below the app.get ID it didnt work. Why?
+app.get('/create', requireLogin, function(req,res){
+  res.render('create');
+})
+
+app.post('/create', requireLogin, function(req,res){
+  Code.create({
+    "title": req.body.title,
+    "codeBody": req.body.codeBody,
+    "notes": req.body.notes,
+    "language": req.body.language,
+    "tags": req.body.tags
+  })
+  .then(function(codes){
+    res.redirect('/collection/')
+  })
+})
+
+app.post('/:id/delete', requireLogin, function(req,res){
+  Code.deleteOne({_id:req.params.id}).then(function(codes){
+    res.redirect('/collection/')
+  })
+})
+
 app.get('/:id', requireLogin, function(req,res){
   Code.findOne({_id:req.params.id}).then(function(codes){
     res.render('single', {codes:codes})
   })
 })
+
 
 
 module.exports = app;

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Create | CC</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text|Raleway" rel="stylesheet">
+  </head>
+  <body>
+    <div class = 'nav'>
+      <div><p><a href = "/collection/">My Collection</a></div>
+        <div><p><a href = "/logout/">Logout</a></p></div>
+    </div>
+    <div class = "new-box-wrapper">
+      <h2>Create a New Code Snippet</h2>
+      <form action = "/create/" method="post" id = "new-form">
+        <p>
+          <input type = "text" id = "title" name = "title" placeholder="Title: "/>
+        </p>
+        <p>
+          <textarea name = "codeBody" id = "codeBody" form =  "new-form" placeholder="Code Snippet: "></textarea>
+        </p>
+        <p>
+          <textarea name = "notes" id = "notes" form =  "new-form" placeholder="Notes: "></textarea>
+        </p>
+        <p>
+          <input type="text" name="language" id="language" placeholder="Language: " />
+        </p>
+        <p>
+          <input type = "text" name = "tags" id = "tags" placeholder="Tags: "/>
+        </p>
+        <p>
+          <button type = "submit">Create</button>
+        </p>
+      </form>
+    </div>
+  </body>
+</html>
