@@ -113,13 +113,13 @@ p{
 
 #title-link a{
   text-decoration: none;
+  border-bottom: solid 1px black;
   cursor: pointer;
   color: black;
 }
 
 #title-link a:hover{
-  color: #FB7F7F;
-  border-bottom: 1px solid #FB7F7F;
+  color: #2ED7C2;
 }
 
 .form-buttons{

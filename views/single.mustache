@@ -9,8 +9,11 @@
   </head>
   <body>
     <div class = 'nav'>
+      {{#user}}
       <div><p><a href = "/collection/">My Collection</a></div>
         <div><p><a href = "/logout/">Logout</a></p></div>
+        <div><p>Hello {{ username }}!</em></p></div>
+        {{/user}}
     </div>
     {{#codes}}
     <div class = "box" "single-box">
