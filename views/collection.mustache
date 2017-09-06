@@ -16,10 +16,10 @@
     </div>
     {{#codes}}
     <div class = "box">
-      <h2>{{title}}</h2>
-      <p>{{codeBody}}</p>
-      <p>{{notes}}</p>
-      <p>{{language}}</p>
+      <h2 id = "title-link"><a href = "/{{_id}}/">{{title}}</a></h2>
+      <p><code>{{codeBody}}</code></p>
+      <p>Notes: {{notes}}</p>
+      <p>Language: {{language}}</p>
       <p>{{tags}}</p>
     </div>
     {{/codes}}

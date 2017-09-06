@@ -154,17 +154,20 @@ const requireLogin = function (req, res, next){
 }
 
 app.get('/collection/', requireLogin, function (req, res) {
-  console.log(Code);
   Code.find().then(function(codes){
-    console.log(codes)
     res.render("collection", {codes:codes})
   })
 });
 
+app.get('/:id', requireLogin, function(req,res){
+  Code.findOne({_id:req.params.id}).then(function(codes){
+    res.render('single', {codes:codes})
+  })
+})
 
 
 module.exports = app;
 
 app.listen(3000, function(){
-  console.log("Running")
+  console.log("Running on Port 3000!")
 });

@@ -13,9 +13,6 @@ h2, h5{
   color: black;
 }
 
-
-
-
 .nav{
   display: flex;
   justify-content: flex-end;
@@ -23,7 +20,7 @@ h2, h5{
   background-color: #1B1927;
 }
 
-.nav p, a{
+.nav p, .nav a{
   padding: 5px;
   color: white;
   font-family: 'Raleway', sans-serif;
@@ -104,4 +101,16 @@ h2, h5{
   margin: 2% 20%;
   background-color: white;
   padding: 15px 0 15px 25px;
+}
+
+#title-link a{
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+
+#title-link a:hover{
+  color: #FB7F7F;
+  border-bottom: 1px solid #FB7F7F;
+
 }
