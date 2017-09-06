@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Code Cat</title>
     <link rel="stylesheet" href="/static/styles.css">
+    <link href="/static/cat-fav.ico" rel="icon" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text|Raleway" rel="stylesheet">
   </head>
   <body>
@@ -12,15 +13,19 @@
         <div><p><a href = "/logout/">Logout</a></p></div>
     </div>
     {{#codes}}
-    <div class = "single-snippet">
+    <div class = "box" "single-box">
       <h2>{{title}}</h2>
-      {{codeBody}}
-      {{notes}}
-      {{language}}
-      {{tags}}
+      <p><code>{{codeBody}}</code></p>
+      <p>{{notes}}</p>
+      <p class = 'written'>Written With: {{language}}</p>
+      <p class = 'code-tags'>{{tags}}</p>
       <form action = '/{{_id}}/delete' method="post" class = 'form-buttons'>
-        <button type="submit">Delete</button>
+        <button type="submit" class = 'del-edit-btn'>Delete</button>
       </form>
+      <form action = '/{{_id}}/edit' method="get" class = 'form-buttons'>
+        <button type = "submit" class = 'del-edit-btn'>Edit</button>
+    </div>
+
       {{/codes}}
     </div>
   </body>

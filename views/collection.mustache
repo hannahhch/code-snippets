@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Collection | CC</title>
     <link rel="stylesheet" href="/static/styles.css">
+    <link href="/static/cat-fav.ico" rel="icon" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text|Raleway" rel="stylesheet">
   </head>
   <body>
@@ -18,9 +19,9 @@
     <div class = "box">
       <h2 id = "title-link"><a href = "/{{_id}}/">{{title}}</a></h2>
       <p><code>{{codeBody}}</code></p>
-      <p>Notes: {{notes}}</p>
-      <p>Language: {{language}}</p>
-      <p>{{tags}}</p>
+      <p>{{notes}}</p>
+      <p class = 'written'>Written With: {{language}}</p>
+      <p class = 'code-tags'>{{tags}}</p>
     </div>
     {{/codes}}
   </body>

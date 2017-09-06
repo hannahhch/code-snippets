@@ -13,6 +13,14 @@ h2, h5{
   color: black;
 }
 
+p{
+  font-family: 'Raleway', sans-serif;
+}
+
+.written {
+  color: #FB7F7F;
+}
+
 .nav{
   display: flex;
   justify-content: flex-end;
@@ -112,5 +120,24 @@ h2, h5{
 #title-link a:hover{
   color: #FB7F7F;
   border-bottom: 1px solid #FB7F7F;
+}
 
+.form-buttons{
+  display: inline-block;
+}
+
+.del-edit-btn{
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  border: solid 1px #FB7F7F;
+  background-color: #FB7F7F;
+  color: white;
+  width: 75px;
+  height: 35px;
+  font-size: 15px;
+}
+
+.del-edit-btn:hover{
+  color:black;
+  cursor: pointer;
 }
