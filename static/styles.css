@@ -111,6 +111,34 @@ p{
   padding: 15px 0 15px 25px;
 }
 
+.single-box{
+  width: 60%;
+  margin: 8% 20%;
+  background-color: white;
+  padding: 15px 0 15px 25px;
+}
+
+.new-box-wrapper{
+  text-align: center;
+}
+
+.new-box-wrapper textarea {
+  width: 300px;
+  height: 100px;
+}
+
+.new-box-wrapper input{
+  width: 300px;
+}
+
+.new-box{
+  width: 40%;
+  margin: 5% 30%;
+  background-color: white;
+  padding: 3% 0;
+}
+
+
 #title-link a{
   text-decoration: none;
   border-bottom: solid 1px black;

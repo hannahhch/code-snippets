@@ -12,13 +12,13 @@
       {{#user}}
       <div><p><a href = "/collection/">My Collection</a></div>
         <div><p><a href = "/logout/">Logout</a></p></div>
-        <div><p>Hello {{ username }}!</em></p></div>
+        <div><p>Hello {{ username }}</em></p></div>
         {{/user}}
     </div>
     {{#codes}}
-    <div class = "box" "single-box">
+    <div class = "single-box">
       <h2>{{title}}</h2>
-      <p><code>{{codeBody}}</code></p>
+      <p><pre><code>{{codeBody}}</code></pre></p>
       <p>{{notes}}</p>
       <p class = 'written'>Written With: {{language}}</p>
       <p class = 'code-tags'>{{tags}}</p>
