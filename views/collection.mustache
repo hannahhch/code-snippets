@@ -25,7 +25,9 @@
       <p>{{notes}}</p>
       <p class = 'written'>Primary Language: <a href = "#" id = "language-link">{{language}}</a></p>
       {{#tags}}
-      <p class = 'code-tags'>{{.}}</p>
+      <div class = "tag-format">
+      <p class = 'code-tags'><a href = "#">{{.}}</a></p>
+    </div>
       {{/tags}}
     </div>
     {{/codes}}

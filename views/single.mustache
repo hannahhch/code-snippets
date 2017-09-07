@@ -20,9 +20,7 @@
       <h2>{{title}}</h2>
       <p><pre><code>{{codeBody}}</code></pre></p>
       <p class = 'written'>Primary Language: <a href = "#" id = "language-link">{{language}}</a></p>
-      {{#tags}}
-      <p class = 'code-tags'>{{.}}</p>
-      {{/tags}}      <form action = '/{{_id}}/delete' method="post" class = 'form-buttons'>
+      <form action = '/{{_id}}/delete' method="post" class = 'form-buttons'>
         <button type="submit" class = 'del-edit-btn'>Delete</button>
       </form>
       <form action = '/{{_id}}/edit' method="get" class = 'form-buttons'>

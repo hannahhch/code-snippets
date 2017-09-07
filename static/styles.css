@@ -100,7 +100,7 @@ p{
   text-transform: uppercase;
   color: white;
   font-size: 4.5em;
-  width: 61.7%;
+  width: 63.5%;
   margin: 5% 20%;
 }
 
@@ -108,7 +108,7 @@ p{
   width: 60%;
   margin: 2% 20%;
   background-color: white;
-  padding: 15px 0 15px 25px;
+  padding: 15px 25px 15px 25px;
 }
 
 .single-box{
@@ -152,6 +152,7 @@ p{
 
 .form-buttons{
   display: inline-block;
+  width: 100px;
 }
 
 .del-edit-btn{
@@ -160,7 +161,7 @@ p{
   border: solid 1px #FB7F7F;
   background-color: #FB7F7F;
   color: white;
-  width: 75px;
+  width: 100px;
   height: 35px;
   font-size: 15px;
 }
@@ -179,4 +180,24 @@ p{
 
 #language-link:hover{
   color:#2ED7C2;
+}
+
+#tags, .code-tags{
+  text-transform: lowercase;
+}
+
+.tag-format{
+  width: 100px;
+  text-align: center;
+  display: inline-block;
+  background-color: #2ED7BD;
+}
+
+.tag-format a{
+  text-decoration: none;
+  color: white;
+}
+
+.tag-format a:hover{
+  color: black;
 }
