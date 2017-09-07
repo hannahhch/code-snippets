@@ -203,12 +203,25 @@ app.post('/:id/edit', requireLogin, function (req,res){
   });
 });
 
-app.get('/:id', requireLogin, function(req,res){
+
+app.get('/code-sample/:id', requireLogin, function(req,res){
   Code.findOne({_id:req.params.id}).then(function(codes){
     res.render('single', {codes:codes})
   })
 })
 
+//renders page to show all of the same language
+app.get('/language/:language', requireLogin, function(req,res){
+  Code.find({language: req.params.language}).then(function(codes){
+    res.render('language', {codes:codes})
+  })
+})
+
+app.get('/tags/:tags', requireLogin, function(req,res){
+  Code.find({tags: req.params.tags}).then(function(codes){
+    res.render('tags', {codes:codes})
+  })
+})
 
 
 module.exports = app;

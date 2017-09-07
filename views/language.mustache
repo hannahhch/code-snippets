@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Collection | CC</title>
+    <title>Language | CC</title>
     <link rel="stylesheet" href="/static/styles.css">
     <link href="/static/cat-fav.ico" rel="icon" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text|Raleway" rel="stylesheet">
@@ -10,14 +10,14 @@
   <body>
     <div class = 'nav'>
       {{#user}}
-
-      <div><p><a href = "/create/">Create</a></div>
-      <div><p><a href = "/logout/">Logout</a></p></div>
-      <div><p>Hello {{ username }}</em></p></div>
-      {{/user}}
+      <div><p><a href = "/collection/">My Collection</a></div>
+        <div><p><a href = "/logout/">Logout</a></p></div>
+        <div><p>Hello {{ username }}</em></p></div>
+        {{/user}}
     </div>
+
     <div class = "secret-header">
-      <h1>Code Cat Collection</h1>
+      <h1>{{codes.language}}</h1>
     </div>
     {{#codes}}
     <div class = "box">
@@ -31,5 +31,6 @@
       {{/tags}}
     </div>
     {{/codes}}
+
   </body>
 </html>
