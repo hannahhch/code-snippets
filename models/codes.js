@@ -6,7 +6,7 @@ const codeSchema = new mongoose.Schema({
   codeBody: String,
   notes: String,
   language: String,
-  tags: String
+  tags: Array
 })
 
 const Code = mongoose.model('Code', codeSchema);

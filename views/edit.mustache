@@ -24,16 +24,19 @@
               <input type = "text" id = "title" name = "title" value = "{{title}}"placeholder="Title: " autofocus required/>
             </p>
             <p>
-              <textarea name = "codeBody" id = "codeBody" form =  "edit-form" placeholder="Code Snippet: {{codeBody}}"></textarea>
+              <textarea name = "codeBody" id = "codeBody" form =  "edit-form">{{codeBody}}</textarea>
             </p>
             <p>
-              <textarea name = "notes" id = "notes" form =  "edit-form" placeholder="Notes: {{notes}}"></textarea>
+              <textarea name = "notes" id = "notes" form =  "edit-form" placeholder="Notes">{{notes}}</textarea>
             </p>
             <p>
               <input type="text" name="language" id="language" value = "{{language}}"placeholder="Language: " />
             </p>
             <p>
-              <input type = "text" name = "tags" value="{{tags}}" id = "tags" placeholder="Tags: "/>
+              {{#tags}}
+              <input type = "text" name = "tags" value="{{.}}" id = "tags" placeholder="Tags: "/>
+              {{/tags}}
+
             </p>
             <p>
               <button type = "submit">SUBMIT</button>

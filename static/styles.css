@@ -169,3 +169,14 @@ p{
   color:black;
   cursor: pointer;
 }
+
+#language-link {
+  text-transform: uppercase;
+  color: black;
+  text-decoration: none;
+  border-bottom: solid 1px black;
+}
+
+#language-link:hover{
+  color:#2ED7C2;
+}

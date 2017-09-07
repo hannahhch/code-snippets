@@ -23,8 +23,10 @@
     <div class = "box">
       <h2 id = "title-link"><a href = "/{{_id}}/">{{title}}</a></h2>
       <p>{{notes}}</p>
-      <p class = 'written'>Primary Language: {{language}}</p>
-      <p class = 'code-tags'>{{tags}}</p>
+      <p class = 'written'>Primary Language: <a href = "#" id = "language-link">{{language}}</a></p>
+      {{#tags}}
+      <p class = 'code-tags'>{{.}}</p>
+      {{/tags}}
     </div>
     {{/codes}}
   </body>
