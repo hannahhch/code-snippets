@@ -99,23 +99,22 @@ p{
   text-align: center;
   text-transform: uppercase;
   color: white;
-  font-size: 4.5em;
-  width: 63.5%;
-  margin: 5% 20%;
+  font-size: 6em;
+  margin: 5% 0%;
 }
 
 .box{
   width: 60%;
-  margin: 2% 20%;
+  margin: 20px auto;
   background-color: white;
   padding: 15px 25px 15px 25px;
 }
 
 .single-box{
   width: 60%;
-  margin: 8% 20%;
+  margin: 8% auto;
   background-color: white;
-  padding: 15px 0 15px 25px;
+  padding: 15px 25px 15px 25px;
 }
 
 .new-box-wrapper{
