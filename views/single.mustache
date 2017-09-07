@@ -1,33 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Code Cat</title>
-    <link rel="stylesheet" href="/static/styles.css">
-    <link href="/static/cat-fav.ico" rel="icon" type="image/x-icon" />
-    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text|Raleway" rel="stylesheet">
-  </head>
-  <body>
-    <div class = 'nav'>
-      {{#user}}
-      <div><p><a href = "/collection/">My Collection</a></div>
-        <div><p><a href = "/logout/">Logout</a></p></div>
-        <div><p>Hello {{ username }}</em></p></div>
-        {{/user}}
-    </div>
-    {{#codes}}
-    <div class = "single-box">
-      <h2>{{title}}</h2>
-      <p><pre><code>{{codeBody}}</code></pre></p>
-      <p class = 'written'>Primary Language: <a href = "#" id = "language-link">{{language}}</a></p>
-      <form action = '/{{_id}}/delete' method="post" class = 'form-buttons'>
-        <button type="submit" class = 'del-edit-btn'>Delete</button>
-      </form>
-      <form action = '/{{_id}}/edit' method="get" class = 'form-buttons'>
-        <button type = "submit" class = 'del-edit-btn'>Edit</button>
-    </div>
+<head>
+  <meta charset="utf-8">
+  <title>Code Cat</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <link href="/static/cat-fav.ico" rel="icon" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text|Raleway" rel="stylesheet">
+</head>
+<body>
+  <div class = 'nav'>
+    {{#user}}
+    <div><p><a href = "/language/css">CSS</a></div>
+      <div><p><a href = "/language/html">HTML</a></div>
+        <div><p><a href = "/language/java">Java</a></div>
+          <div><p><a href = "/language/javascript">JavaScript</a></div>
+            <div><p><a href = "/language/nodejs">NodeJS</a></div>
+              <div><p><a href = "/language/php">PHP</a></div>
+                <div><p><a href = "/language/python">Python</a></div>
+                  <div><p><a href = "/language/ruby">Ruby</a></div>
+                    <div><p><a href = "/language/sql">SQL</a></div>
+                      <div class = "pink"><p><a href = "/collection/">My Collection</a></div>
+                        <div class = "pink"><p><a href = "/logout/">Logout</a></p></div>
+                        <div><p>Hello {{ username }}</em></p></div>
+                        {{/user}}
+                      </div>
+                      {{#codes}}
+                      <div class = "single-box">
+                        <h2>{{title}}</h2>
+                        <p><pre><code>{{codeBody}}</code></pre></p>
+                        <p class = 'written'>Primary Language: <a href = "#" id = "language-link">{{language}}</a></p>
+                        <form action = '/{{_id}}/delete' method="post" class = 'form-buttons'>
+                          <button type="submit" class = 'del-edit-btn'>Delete</button>
+                        </form>
+                        <form action = '/{{_id}}/edit' method="get" class = 'form-buttons'>
+                          <button type = "submit" class = 'del-edit-btn'>Edit</button>
+                        </div>
 
-      {{/codes}}
-    </div>
-  </body>
-</html>
+                        {{/codes}}
+                      </div>
+                    </body>
+                    </html>

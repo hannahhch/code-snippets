@@ -10,11 +10,36 @@
   <body>
     <div class = 'nav'>
       {{#user}}
-      <div><p><a href = "/collection/">My Collection</a></div>
-        <div><p><a href = "/logout/">Logout</a></p></div>
+
+      <div><p><a href = "/language/css">CSS</a></div>
+      <div><p><a href = "/language/html">HTML</a></div>
+      <div><p><a href = "/language/java">Java</a></div>
+      <div><p><a href = "/language/javascript">JavaScript</a></div>
+      <div><p><a href = "/language/nodejs">NodeJS</a></div>
+      <div><p><a href = "/language/php">PHP</a></div>
+      <div><p><a href = "/language/python">Python</a></div>
+      <div><p><a href = "/language/ruby">Ruby</a></div>
+      <div><p><a href = "/language/sql">SQL</a></div>
+      <div class = "pink"><p><a href = "/collection/">My Collection</a></div>
+        <div class = "pink"><p><a href = "/logout/">Logout</a></p></div>
         <div><p>Hello {{ username }}</em></p></div>
         {{/user}}
     </div>
+    <div class = "secret-header">
+      <h1>Code Cat Captions</h1>
+    </div>
+    {{#codes}}
+    <div class = "box">
+      <h2 id = "title-link"><a href = "/code-sample/{{_id}}/">{{title}}</a></h2>
+      <p>{{notes}}</p>
+      <p class = 'written'>Primary Language: <a href = "/language/{{language}}/" id = "language-link">{{language}}</a></p>
+      {{#tags}}
+      <div class = "tag-format">
+      <p class = 'code-tags'><a href = "/tags/{{.}}/">{{.}}</a></p>
+    </div>
+      {{/tags}}
+    </div>
+    {{/codes}}
     <body>
 
   </body>

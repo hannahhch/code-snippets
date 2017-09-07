@@ -217,6 +217,7 @@ app.get('/language/:language', requireLogin, function(req,res){
   })
 })
 
+//renders page to show all of same tags
 app.get('/tags/:tags', requireLogin, function(req,res){
   Code.find({tags: req.params.tags}).then(function(codes){
     res.render('tags', {codes:codes})

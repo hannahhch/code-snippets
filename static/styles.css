@@ -23,12 +23,18 @@ p{
 
 .nav{
   display: flex;
+  justify-content: space-around;
+  background-color: #1B1927;
+}
+
+.right-nav{
+  display: flex;
   justify-content: flex-end;
   padding-right: 4em;
   background-color: #1B1927;
 }
 
-.nav p, .nav a{
+.nav p, .nav a, .right-nav p, .right-nav a{
   padding: 5px;
   color: white;
   font-family: 'Raleway', sans-serif;
@@ -36,7 +42,7 @@ p{
   text-transform: uppercase;
 }
 
-.nav p{
+.nav p, .right-nav p{
   padding: 5px;
   color: #2ED7C2;
   font-family: 'Raleway', sans-serif;
@@ -44,7 +50,7 @@ p{
   text-transform: uppercase;
 }
 
-.nav a:hover{
+.nav a:hover, .right-nav a:hover{
   color: #FB7F7F;
   border-bottom: solid 1px #FB7F7F;
 }
@@ -112,7 +118,7 @@ p{
 
 .single-box{
   width: 60%;
-  margin: 20px auto;
+  margin: 90px auto;
   background-color: white;
   padding: 15px 25px 15px 25px;
 }
@@ -137,6 +143,14 @@ p{
   padding: 3% 0;
 }
 
+.pink a{
+  color: #FB7F7F;
+}
+
+.pink a:hover{
+  color: white;
+  border-bottom: solid 1px white;
+}
 
 #title-link a{
   text-decoration: none;
