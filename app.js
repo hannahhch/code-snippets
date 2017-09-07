@@ -77,6 +77,10 @@ app.get('/', function(req,res){
     res.render('index');
 });
 
+app.get('/about', function(req,res){
+  res.render('about');
+});
+
 
 
 app.get('/login/', function(req, res){
@@ -154,7 +158,7 @@ const requireLogin = function (req, res, next){
 }
 
 app.get('/collection/', requireLogin, function (req, res) {
-  Code.find().then(function(codes){
+  Code.find({author: req.user.username}).then(function(codes){
     res.render("collection", {codes:codes})
   })
 });
@@ -165,7 +169,9 @@ app.get('/create', requireLogin, function(req,res){
 })
 
 app.post('/create', requireLogin, function(req,res){
+  req.body.tags = req.body.tags.replace(/\s/g, '').split(",")
   Code.create({
+    "author": req.user.username,
     "title": req.body.title,
     "codeBody": req.body.codeBody,
     "notes": req.body.notes,
