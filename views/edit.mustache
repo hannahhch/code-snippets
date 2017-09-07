@@ -13,8 +13,34 @@
       <div><p><a href = "/collection/">My Collection</a></div>
         <div><p><a href = "/logout/">Logout</a></p></div>
         <div><p>Hello {{ username }}</em></p></div>
+      </div>
         {{/user}}
-    </div>
-
+        <div class = "new-box-wrapper">
+          <div class = "new-box">
+            {{#codes}}
+          <h2>Edit {{title}}</h2>
+          <form action = "/{{_id}}/edit" method="post" id = "edit-form">
+            <p>
+              <input type = "text" value = "{{title}}" placeholder="Name: " required/>
+            </p>
+            <p>
+              <textarea form =  "edit-form" placeholder= "Code Snippet: {{codeBody}}"></textarea>
+            </p>
+            <p>
+              <textarea form =  "edit-form" placeholder="Notes: {{notes}}"></textarea>
+            </p>
+            <p>
+              <input type="text" name="language" id="language" value = "{{language}}"placeholder="Language: " />
+            </p>
+            <p>
+              <input type = "text" name = "tags" value="{{tags}}" id = "tags" placeholder="Tags: "/>
+            </p>
+            <p>
+              <button type = "submit">SUBMIT</button>
+            </p>
+          </form>
+          {{/codes}}
+        </div>
+      </div>
   </body>
 </html>

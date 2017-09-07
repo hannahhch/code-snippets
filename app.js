@@ -183,6 +183,26 @@ app.post('/:id/delete', requireLogin, function(req,res){
   })
 })
 
+app.get("/:id/edit", requireLogin, function(req,res){
+  Code.findOne({_id:req.params.id}).then(function(code){
+    res.render('edit', {codes:codes})
+  })
+})
+
+app.post('/:id/edit', requireLogin, function (req,res){
+  Code.updateOne({_id:req.params.id},
+  {
+    "title": req.body.title,
+    "codeBody": req.body.codeBody,
+    "notes": req.body.notes,
+    "language": req.body.language,
+    "tags": req.body.tags
+  })
+  .then(function(update){
+    res.redirect('/collection/');
+  });
+});
+
 app.get('/:id', requireLogin, function(req,res){
   Code.findOne({_id:req.params.id}).then(function(codes){
     res.render('single', {codes:codes})
