@@ -184,7 +184,7 @@ app.post('/:id/delete', requireLogin, function(req,res){
 })
 
 app.get("/:id/edit", requireLogin, function(req,res){
-  Code.findOne({_id:req.params.id}).then(function(code){
+  Code.findOne({_id:req.params.id}).then(function(codes){
     res.render('edit', {codes:codes})
   })
 })
