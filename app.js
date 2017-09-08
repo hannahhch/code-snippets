@@ -11,10 +11,10 @@ const flash = require('express-flash-messages');
 const expressValidator = require('express-validator');
 const User = models.User;
 const LocalStrategy = require('passport-local').Strategy;
-const mongoURL = 'mongodb://localhost:27017/test';
+//const mongoURL = 'mongodb://localhost:27017/test';
 mongoose.Promise = require('bluebird');
 
-//const mongoURL = process.env.MONGODB_URI;
+const mongoURL = process.env.MONGODB_URI;
 
 const app = express();
 
