@@ -14,6 +14,7 @@ const LocalStrategy = require('passport-local').Strategy;
 const mongoURL = 'mongodb://localhost:27017/test';
 mongoose.Promise = require('bluebird');
 
+//const mongoURL = process.env.MONGODB_URI;
 
 const app = express();
 
@@ -235,6 +236,6 @@ app.get('/tags/:tags', requireLogin, function(req,res){
 
 module.exports = app;
 
-app.listen(3000, function(){
-  console.log("Running on Port 3000!")
+app.listen(process.env.PORT || 8000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
