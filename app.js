@@ -158,7 +158,7 @@ const requireLogin = function (req, res, next){
 }
 
 app.get('/collection/', requireLogin, function (req, res) {
-  Code.find({author: req.user.username}).then(function(codes){
+  Code.find({author: req.user.username}).sort([['_id', 'descending']]).then(function(codes){
     res.render("collection", {codes:codes})
   })
 });
@@ -172,6 +172,7 @@ app.post('/create', requireLogin, function(req,res){
   req.body.tags = req.body.tags.replace(/\s/g, '').split(",")
   Code.create({
     "author": req.user.username,
+    "dateAdded": req.body.dateAdded,
     "title": req.body.title,
     "codeBody": req.body.codeBody,
     "notes": req.body.notes,
@@ -198,6 +199,7 @@ app.get("/:id/edit", requireLogin, function(req,res){
 app.post('/:id/edit', requireLogin, function (req,res){
   Code.updateOne({_id:req.params.id},
   {
+    "dateAdded": req.body.dateAdded,
     "title": req.body.title,
     "codeBody": req.body.codeBody,
     "notes": req.body.notes,

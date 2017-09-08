@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 
 const codeSchema = new mongoose.Schema({
   author: String,
+  dateAdded: Date ,
+  githubLink: String,
   title: { type: String, required: true },
   codeBody: String,
   notes: String,

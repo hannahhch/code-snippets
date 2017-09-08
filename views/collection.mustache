@@ -24,9 +24,11 @@
       <div><p>Hello {{ username }}</em></p></div>
       {{/user}}
     </div>
+
     <div class = "secret-header">
-      <h1>Code Cat Collection</h1>
+      <h1 id = "personal">My Collection</h1>
     </div>
+
     {{#codes}}
     <div class = "box">
       <h2 id = "title-link"><a href = "/code-sample/{{_id}}/">{{title}}</a></h2>
