@@ -1,39 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Edit | CC</title>
-    <link rel="stylesheet" href="/static/styles.css">
-    <link href="/static/cat-fav.ico" rel="icon" type="image/x-icon" />
-    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text|Raleway" rel="stylesheet">
-  </head>
-  <body>
-    <div class = 'nav'>
-      {{#user}}
-
-      <div><p><a href = "/language/css">CSS</a></div>
-      <div><p><a href = "/language/html">HTML</a></div>
-      <div><p><a href = "/language/java">Java</a></div>
-      <div><p><a href = "/language/javascript">JavaScript</a></div>
-      <div><p><a href = "/language/nodejs">NodeJS</a></div>
-      <div><p><a href = "/language/php">PHP</a></div>
-      <div><p><a href = "/language/python">Python</a></div>
-      <div><p><a href = "/language/ruby">Ruby</a></div>
-      <div><p><a href = "/language/sql">SQL</a></div>
+<head>
+  <meta charset="utf-8">
+  <title>Edit | CC</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <link href="/static/cat-fav.ico" rel="icon" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text|Raleway" rel="stylesheet">
+</head>
+<body>
+  <div class = 'nav'>
+    {{#user}}
+      <div><p><a href = "/language/css">CSS</a></p></div>
+      <div><p><a href = "/language/html">HTML</a></p></div>
+      <div><p><a href = "/language/java">Java</a></p></div>
+      <div><p><a href = "/language/javascript">JavaScript</a></p></div>
+      <div><p><a href = "/language/nodejs">NodeJS</a></p></div>
+      <div><p><a href = "/language/php">PHP</a></p></div>
+      <div><p><a href = "/language/python">Python</a></p></div>
+      <div><p><a href = "/language/react">React</a></p></div>
+      <div><p><a href = "/language/ruby">Ruby</a></p></div>
       <div class = "pink"><p><a href = "/collection/">My Collection</a></div>
         <div class = "pink"><p><a href = "/logout/">Logout</a></p></div>
         <div><p>Hello {{ username }}</em></p></div>
       </div>
-        {{/user}}
-        <div class = "new-box-wrapper">
-          <div class = "new-box">
-            {{#codes}}
+    {{/user}}
+    <div class = "new-box-wrapper">
+      <div class = "new-box">
+        {{#codes}}
           <h2>Edit {{title}}</h2>
           <form action = "/{{_id}}/edit" method="post" id = "edit-form">
             <p>
-              <input type = "text" id = "title" name = "title" value = "{{title}}"placeholder="Title: " autofocus required/>
+              <input type = "text" id = "title" name = "title" value = "{{title}}" placeholder="Title: " autofocus required/>
             </p>
-            
+
             <p>
               <textarea name = "codeBody" id = "codeBody" form =  "edit-form">{{codeBody}}</textarea>
             </p>
@@ -41,20 +40,20 @@
               <textarea name = "notes" id = "notes" form =  "edit-form" placeholder="Notes">{{notes}}</textarea>
             </p>
             <p>
-              <input type="text" name="language" id="language" value = "{{language}}"placeholder="Language: " />
+              <input type="text" name="language" id="language" value = "{{language}}" placeholder="Language: " />
             </p>
             <p>
               {{#tags}}
               <input type = "text" name = "tags" value="{{.}}" id = "tags" placeholder="Tags (please separate by commas) "/>
               {{/tags}}
-
             </p>
             <p>
               <button type = "submit">SUBMIT</button>
             </p>
           </form>
-          {{/codes}}
-        </div>
+        {{/codes}}
       </div>
-  </body>
+    </div>
+  </div>
+</body>
 </html>
