@@ -146,7 +146,7 @@ app.post('/register/', function(req, res){
         if (err) {
           return next(err);
         }
-        return res.redirect('/');
+        return res.redirect('/collection/');
       })
     })
   });
